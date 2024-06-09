@@ -1,0 +1,13 @@
+.container {
+  max-width: 275px;
+
+  @include onMobileM {
+    max-width: 300px;
+  }
+
+  &__main-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

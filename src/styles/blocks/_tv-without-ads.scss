@@ -1,0 +1,27 @@
+.tv-without-ads {
+  background: url('../assets/images/tv-without-ads.png') no-repeat center center /
+    cover;
+  background-position: 25% center;
+
+  & .container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 700;
+  }
+
+  &__text {
+    line-height: 20px;
+    opacity: 0.8;
+  }
+
+  & .arrow-next {
+    position: absolute;
+    bottom: 25;
+    left: 50%;
+  }
+}

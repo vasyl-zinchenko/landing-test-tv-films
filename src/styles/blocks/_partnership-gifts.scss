@@ -1,0 +1,28 @@
+.partnership-gifts {
+  background: url('../assets/images/partnership-gifts.png') $background
+    no-repeat bottom center / 90%;
+
+  & .container {
+    padding-top: 60px;
+
+    @include onMobileM {
+      padding-top: 100px;
+    }
+  }
+
+  &__title {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 700;
+
+    @include onMobileM {
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    font-size: 15px;
+    line-height: 25px;
+    opacity: 0.8;
+  }
+}

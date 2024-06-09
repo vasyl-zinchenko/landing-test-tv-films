@@ -1,0 +1,61 @@
+.menu {
+  position: absolute;
+  right: 0;
+  left: 0;
+
+  &__button {
+    padding: 15px;
+    z-index: 10;
+
+    &-container {
+      display: flex;
+      cursor: pointer;
+    }
+  }
+
+  &__link {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    font-size: 20px;
+    line-height: 22px;
+  }
+}
+
+#menu-toggle {
+  display: none;
+
+  &:checked {
+    & ~ .menu .menu__link {
+      height: 60px;
+      align-items: center;
+      padding: 0.5em;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+      z-index: 1;
+      display: flex;
+      font-size: 20px;
+      line-height: 22px;
+      color: black;
+
+      &:last-child {
+        background-color: $mainTopazColor;
+        color: white;
+      }
+    }
+
+    & ~ .menu .menu-background {
+      height: 100vh;
+      position: absolute;
+      background-color: white;
+      right: 0;
+      left: 0;
+      z-index: 1;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+  }
+}
+
+.menu-background,
+.menu__link {
+  height: 0;
+}

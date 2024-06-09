@@ -1,0 +1,24 @@
+html {
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
+}
+
+header {
+  position: absolute;
+}
+
+body {
+  max-width: 425px;
+  margin: auto;
+}
+
+p,
+a {
+  color: white;
+  font-family: $fontSFUI;
+}
+
+* {
+  box-sizing: border-box;
+}

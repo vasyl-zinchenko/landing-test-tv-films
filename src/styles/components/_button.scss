@@ -1,0 +1,27 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 200px;
+  height: 55px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: $mainTopazColor;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: #1e887d;
+    filter: drop-shadow(2px 4px 6px black);
+  }
+
+  &:active {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transform: scale(0.97);
+  }
+}

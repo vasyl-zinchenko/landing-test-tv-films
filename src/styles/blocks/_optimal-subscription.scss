@@ -1,0 +1,95 @@
+.optimal-subscription {
+  background: url('../assets/images/content.png') $background no-repeat center
+    center / cover;
+  border: 8px solid $mainTopazColor;
+
+  & .container {
+    height: auto;
+  }
+
+  &__header {
+    padding-top: 35px;
+    gap: 10px;
+
+    & > p:first-child {
+      padding-bottom: 10px;
+      line-height: 22.4px;
+      letter-spacing: 0.5px;
+    }
+
+    & > p:last-child {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 28.64px;
+      letter-spacing: 1px;
+    }
+  }
+
+  & .container__main-text {
+    margin-top: 50px;
+    gap: 10px;
+
+    @include onMobileM {
+      margin-top: 105px;
+    }
+  }
+
+  &__title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 30px;
+
+    @include onMobileM {
+      font-size: 36px;
+      line-height: 42.96px;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+
+    @include onMobileM {
+      font-size: 16px;
+      line-height: 22.4px;
+    }
+  }
+
+  &__offer {
+    margin-top: 30px;
+
+    @include onMobileM {
+      margin-top: 40px;
+    }
+
+    &_price {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 30px;
+      margin-bottom: 15px;
+
+      @include onMobileM {
+        font-size: 24px;
+      }
+    }
+
+    &_price-detail {
+      font-size: 12px;
+      line-height: 14.32px;
+      letter-spacing: 0.83px;
+      color: #ffffff99;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+
+    &_detail {
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 13.13px;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      color: white;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@import './utils/variables';
+@import './utils/resets';
+@import './utils/normalize';
+@import './utils/fonts';
+@import './utils/mixins';
+
+@import './components/button';
+
+@import './blocks/header';
+@import './blocks/menu';
+@import './blocks/tv-without-ads';
+@import './blocks/films-without-internet';
+@import './blocks/optimal-subscription';
+@import './blocks/partnership-gifts';
+@import './blocks/subscription';
+
+@import './layouts/wrapper';
+@import './layouts/container';
