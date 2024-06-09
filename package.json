@@ -6,6 +6,7 @@
     "start": "parcel",
     "build": "parcel build",
     "lint": "eslint src",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
@@ -19,6 +20,7 @@
   },
   "dependencies": {
     "@parcel/transformer-js": "^2.10.0",
+    "gh-pages": "^6.1.1",
     "sass": "^1.69.3"
   }
 }
