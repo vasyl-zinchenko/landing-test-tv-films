@@ -1,10 +1,8 @@
 .films-without-internet {
-  background: url('../assets/images/iPhone.png') $background no-repeat bottom
-    center / 220px;
+  background: url('../assets/images/iPhone.png') $background no-repeat bottom center / 220px;
 
   @include onMobileM {
-    background: url('../assets/images/iPhone.png') $background no-repeat bottom
-      center / 285px;
+    background: url('../assets/images/iPhone.png') $background no-repeat bottom center / 285px;
   }
 
   & .container {
