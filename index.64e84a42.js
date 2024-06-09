@@ -1,0 +1,2 @@
+document.addEventListener("DOMContentLoaded",()=>{let e=document.getElementById("menu-toggle"),n=document.body,o=document.querySelectorAll(".menu__link"),t=document.querySelector(".header__container");o.forEach(o=>{o.addEventListener("click",()=>{e.checked=!1,n.style.overflow="auto",t.style.background="none"})}),e.addEventListener("change",()=>{e.checked?(n.style.overflow="hidden",t.style.backgroundColor="#1b1b1b"):(n.style.overflow="auto",t.style.background="none")})});
+//# sourceMappingURL=index.64e84a42.js.map
