@@ -22,3 +22,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const sections = document.querySelectorAll('.wrapper');
+
+	    const scrollToSection = (index) => {
+      window.scrollTo({
+        top: sections[index].offsetTop,
+        behavior: 'smooth',
+      });
+    };
+  
+  const options = {
+    root: null,
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        window.history.pushState(null, null, `#${entry.target.id}`);
+      }
+    });
+  }, options);
+
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
+});
