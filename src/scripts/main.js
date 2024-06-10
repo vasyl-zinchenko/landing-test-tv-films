@@ -3,46 +3,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const body = document.body;
   const allMenuLink = document.querySelectorAll('.menu__link');
   const headerContainer = document.querySelector('.header__container');
-  const sections = document.querySelectorAll('.wrapper');
-
   let ignoreObserver = false;
-  const options = {
-    root: null,
-    threshold: 0.1,
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    if (ignoreObserver) return;
-
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        window.history.replaceState(null, null, `#${entry.target.id}`);
-      }
-    });
-  }, options);
-
-  sections.forEach((section) => {
-    observer.observe(section);
-  });
 
   allMenuLink.forEach((el) => {
-    el.addEventListener('click', (event) => {
-      event.preventDefault();
-      const targetId = el.getAttribute('href').substring(1);
-      const targetElement = document.getElementById(targetId);
-
+    el.addEventListener('click', () => {
       ignoreObserver = true;
-
-      window.history.pushState(null, null, `#${targetId}`);
-      targetElement.scrollIntoView({ behavior: 'smooth' });
-
-      setTimeout(() => {
-        ignoreObserver = false;
-      }, 1000);
-
       toggle.checked = false;
       body.style.overflow = 'auto';
       headerContainer.style.background = 'none';
+      setTimeout(() => {
+        ignoreObserver = false;
+      }, 500);
     });
   });
 
@@ -54,5 +25,28 @@ document.addEventListener('DOMContentLoaded', () => {
       body.style.overflow = 'auto';
       headerContainer.style.background = 'none';
     }
+  });
+
+  const sections = document.querySelectorAll('.wrapper');
+
+  const options = {
+    root: null,
+    threshold: 0.1,
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    if (!ignoreObserver) {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          window.history.pushState(null, null, `#${entry.target.id}`);
+        }
+      });
+    } else {
+      return;
+    }
+  }, options);
+
+  sections.forEach((section) => {
+    observer.observe(section);
   });
 });
