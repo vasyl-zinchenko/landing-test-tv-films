@@ -17,10 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
       body.style.overflow = 'hidden';
       headerContainer.style.backgroundColor = '#1b1b1b';
     } else {
-      setTimeout(() => {
         body.style.overflow = 'auto';
         headerContainer.style.background = 'none';
-      }, 300); 
     }
   });
 });
@@ -36,7 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const observer = new IntersectionObserver((entries, _) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
-        window.history.pushState(null, null, `#${entry.target.id}`);
+				setTimeout(() => {
+        	window.history.pushState(null, null, `#${entry.target.id}`);
+				}, 300)
       }
     });
   }, options);
