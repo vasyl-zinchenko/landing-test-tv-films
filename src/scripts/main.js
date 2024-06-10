@@ -25,13 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('.wrapper');
-
-	    const scrollToSection = (index) => {
-      window.scrollTo({
-        top: sections[index].offsetTop,
-        behavior: 'smooth',
-      });
-    };
   
   const options = {
     root: null,
