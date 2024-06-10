@@ -5,7 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const headerContainer = document.querySelector('.header__container');
 
   allMenuLink.forEach((el) => {
-    el.addEventListener('click', () => {
+    el.addEventListener('click', (event) => {
+      event.preventDefault();
+      const targetId = el.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      window.history.pushState(null, null, `#${targetId}`);
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+
       toggle.checked = false;
       body.style.overflow = 'auto';
       headerContainer.style.background = 'none';
@@ -17,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
       body.style.overflow = 'hidden';
       headerContainer.style.backgroundColor = '#1b1b1b';
     } else {
-        body.style.overflow = 'auto';
-        headerContainer.style.background = 'none';
+      body.style.overflow = 'auto';
+      headerContainer.style.background = 'none';
     }
   });
 });
@@ -31,12 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
     threshold: 0.1
   };
 
-  const observer = new IntersectionObserver((entries, _) => {
-    entries.forEach((entry, i) => {
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-				setTimeout(() => {
-        	window.history.pushState(null, null, `#${entry.target.id}`);
-				}, 300)
+        window.history.replaceState(null, null, `#${entry.target.id}`); 
       }
     });
   }, options);
