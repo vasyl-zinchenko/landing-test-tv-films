@@ -26,27 +26,4 @@ document.addEventListener('DOMContentLoaded', () => {
       headerContainer.style.background = 'none';
     }
   });
-
-  const sections = document.querySelectorAll('.wrapper');
-
-  const options = {
-    root: null,
-    threshold: 0.1,
-  };
-
-  const observer = new IntersectionObserver((entries, observer) => {
-    if (!ignoreObserver) {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          window.history.pushState(null, null, `#${entry.target.id}`);
-        }
-      });
-    } else {
-      return;
-    }
-  }, options);
-
-  sections.forEach((section) => {
-    observer.observe(section);
-  });
 });
